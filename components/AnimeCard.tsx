@@ -20,7 +20,7 @@ interface Prop {
 
 const AnimeCard = ({ anime }: Prop) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col max-w-sm rounded relative w-full">
       <div>
         <Image
           src={anime.image.original}
@@ -31,11 +31,11 @@ const AnimeCard = ({ anime }: Prop) => {
         />
       </div>
       <div className="flex flex-col py-2">
-        <div className="flex flex-row">
+        <div className="flex flex-row justify-between">
           <h2 className="text-white font-bold text-base capitalize line-clamp-1 w-full">
             {anime.name.replace(/_/g, " ")}
           </h2>
-          <div className="py-1 px-2 bg-[#161921] rounded-md">
+          <div className="py-1 px-2  bg-[#161921] rounded-md">
             <p className="text-white text-sm font-normal capitalize">
               {anime.kind}
             </p>
