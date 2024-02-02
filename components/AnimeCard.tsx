@@ -23,7 +23,7 @@ const AnimeCard = ({ anime }: Prop) => {
     <div className="flex flex-col max-w-sm rounded relative w-full">
       <div>
         <Image
-          src={anime.image.original}
+          src={`https://shikimori.one/${anime.image.original}`}
           alt={anime.name}
           width={300}
           height={500}

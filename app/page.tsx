@@ -1,8 +1,10 @@
-import AnimeCard, { AnimeProp } from "@/components/AnimeCard";
 import Hero from "@/components/Hero";
-import { data } from "./_data";
 
-export default function Home() {
+import { animeFetch } from "./action";
+
+export default async function Home() {
+  const data = await animeFetch(1);
+
   return (
     <main className="">
       <Hero />
@@ -10,10 +12,8 @@ export default function Home() {
         Explore Anime
       </h3>
       <div className=" md:px-20  px-6 pb-20 flex flex-col items-center">
-        <section className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10 max-w-[1677px]">
-          {data.map((item: AnimeProp, index) => (
-            <AnimeCard key={item.id} anime={item} index={index} />
-          ))}
+        <section className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10 max-w-[1677px] items-end">
+          {data}
         </section>
       </div>
     </main>
